@@ -18,11 +18,11 @@ A staff registry web app for safaricom Technology Division built with Java
 
 |    Behavior   |     Input     |    Output                                                                  |
 | ------------- | ------------- | ---------------------------------------------------------------------------|
-| Creates new   | Enter any text|     "Planning"                                                                 |
+| Creates new   | Enter Department name|     "Planning"                                                                 |
 |   Department  |     "Planning"|                                                                            |
 | ------------- | ------------- | ---------------------------------------------------------------------------|
-| Creates new   |"Jane Doe"     |     "Jane Doe"                                                        |
-|    Staff      |               |                                                                            |
+| Creates new   |Enter staff name     |     "Jane Doe"                                                        |
+|    Staff      |  "Jane Doe"             |                                                                            |
 | ------------- | ------------- | ---------------------------------------------------------------------------|
 
 ## Link to Repository
