@@ -1,0 +1,56 @@
+{{#partial "content"}}
+
+
+
+<div class="container">
+    <div class="col-lg-4">
+        <div class="panel panel-info">
+            <div class="panel-heading">Safaricom Departments</div>
+            <div class="panel-body">
+                <select id="department" name="department" class="form-control" >
+                    {{#if departments}}
+                        {{#each departments }} <!--loop-->
+                            <option value="{{value}}">{{name}}</option>
+                            <!--show-->
+                        {{/each}}
+                    {{else}} <!--no posts!-->
+                        <div class="alert alert-info" role="alert">
+                            <a href="#" class="alert-link"><div class="alert alert-info" role="alert">
+                                <a href="#" class="alert-link"></a>
+                            </div></a>
+                        </div>
+                        <option value="Null">No departments!</option>
+                    {{/if}}
+                    <option value="{{value}}">{{name}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        {{#if staffs}} <!--if staffs exist, then -->
+            {{#each staffs }} <!--loop-->
+                <p>New Staff Details:</p>
+                <p>Name :{{ content }},{{ id }}</p>
+                <p>Department: {{ department }}</p>
+
+                <p>{{ content }} <a href="/staff/{{id}}">read more...</a></p>
+                <p> <a href="/staff/{{id}}/update">Edit this post</a><br></p>
+                <!--show-->
+            {{/each}}
+        {{else}} <!--no posts!-->
+            <div class="alert alert-info" role="alert">
+                <a href="#" class="alert-link">No staff!</a>
+            </div>
+        {{/if}}
+
+    </div>
+</div>
+
+{{#each departments}}
+ <p><h4>Name: {{name}} Department :{{value}}</h4></p>
+{{/each}}
+
+<a href="/" class="btn btn-success">Go Back</a>
+{{/partial}}
+
+{{> layout.hbs}}

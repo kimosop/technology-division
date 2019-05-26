@@ -1,0 +1,43 @@
+<html>
+<head>
+   <title>{{#block "title"}}Staff Registry{{/block}}</title>
+
+   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+   <link rel='stylesheet' href='/resources/styles.css'>
+</head>
+<body>
+<!--<div class="jumbotron" style="background-color:#009e61;">-->
+<div class="jumbotron"  style="background-color:#009e61;">
+    <h1 style="text-align:center; color: white;" >Staff Manager</h1>
+<!--    <h1 style="text-align:center;">Staff Registry</h1>-->
+</div>
+    <div class= "container">
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="/">Home</a></li>
+            <li role="presentation"><a href="/departments">Add a New Department</a></li>
+            <li role="presentation"><a href="/staff">Add a New Staff</a></li>
+            <li role="presentation"><a href="/staff">See All Staff</a></li>
+            <li role="presentation"><a href="/departments">See All Departments</a></li>
+<!--            <li role="presentation"><a href="/departments">Statistics</a></li>-->
+<!--            <li role="presentation"><a href="/departments">Help</a></li>-->
+<!--            <li role="presentation"><a href="/departments">Contact Admin</a></li>-->
+        </ul>
+    </div>
+
+<div class="container" style="text-align:center">
+   <!--begin main template-->
+   <div class="page-header">
+   {{#block "image"}}
+   {{/block}}
+       <h1>Safaricom Staff Registry</h1>
+   </div>
+<div class="page">
+{{#block "content"}}
+
+{{/block}}
+
+{{#block "footer"}}
+   </div>
+   </body>
+   </html>
+{{/block}}
