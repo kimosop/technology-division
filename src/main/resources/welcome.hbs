@@ -1,0 +1,134 @@
+{{#partial "content"}}
+
+    <div class="container" >
+        <div class="col-lg-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">Safaricom Departments</div>
+                <div class="panel-body">
+                    {{#if departments}} <!--if staffs exist, then -->
+                    <ul class="list-group">
+                        {{#each departments}} <!--loop-->
+                            <li class="list-group-item"><a href="/departments/{{id}}">{{ name }}</a></li>
+                            <!--show-->
+                        {{/each}}
+                    </ul>
+                    {{else}} <!--no posts!-->
+                        <p>No Departments!</p>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="alert alert-info" role="alert">
+                <h3>Add New Department</h3>
+                <form class="form-inline" action="/departments/new" method="post">
+                    <label for="content">Department Name</label>
+                    <input id="name" name="name" type="text" class="form-control">
+                    <button type="submit" class="btn btn-success">Add Department</button>
+                </form>
+            </div>
+            <div class="alert alert-info" role="alert">
+                <h3>Add New Staff</h3>
+                <form class="form-inline" action="/staffs/new" method="post">
+                    <label for="content">Staff Name</label>
+                    <input id="content" name="content" type="text" class="form-control">
+                    <select id="department" name="department" class="form-control" >
+                        {{#if departments}}
+                            {{#each departments }} <!--loop-->
+                                <option value="{{value}}">{{name}}</option>
+                                <!--show-->
+                            {{/each}}
+                        {{else}} <!--no posts!-->
+                            <div class="alert alert-success" role="alert">
+                                <a href="#" class="alert-link"><div class="alert alert-info" role="alert">
+                                    <a href="#" class="alert-link"></a>
+                                </div></a>
+                            </div>
+                            <option value="Null">No departments!</option>
+                        {{/if}}
+                        <option value="{{value}}">{{name}}</option>
+                    </select>
+
+                    <button type="submit" class="btn btn-success">Add Staff</button>
+                </form>
+            </div>
+<!--            {{#if staffs}} &lt;!&ndash;if staffs exist, then &ndash;&gt;-->
+<!--                {{#each staffs }} &lt;!&ndash;loop&ndash;&gt;-->
+<!--                    <p>New Staff Details:</p>-->
+<!--                    <p>Name :{{ content }},{{ id }}</p>-->
+<!--                    <p>Department: {{ department }}</p>-->
+
+<!--                    <p>{{ content }} <a href="/staff/{{id}}">read more...</a></p>-->
+<!--                    <p> <a href="/staff/{{id}}/update">Edit this post</a><br></p>-->
+<!--                    &lt;!&ndash;show&ndash;&gt;-->
+<!--                {{/each}}-->
+<!--            {{else}} &lt;!&ndash;no posts!&ndash;&gt;-->
+<!--                <div class="alert alert-info" role="alert">-->
+<!--                    <a href="#" class="alert-link">No staff!</a>-->
+<!--                </div>-->
+<!--            {{/if}}-->
+            <a href="/">Go Back</a>
+        </div>
+
+
+    </div>
+
+
+<!--   {{#if staffs}} &lt;!&ndash;if staffs exist, then &ndash;&gt;-->
+<!--       {{#each staffs }} &lt;!&ndash;loop&ndash;&gt;-->
+<!--        <p>New Staff Details:</p>-->
+<!--        <p>Name :{{ content }},{{ id }}</p>-->
+<!--        <p>Department: {{ department }}</p>-->
+
+<!--        <p>{{ content }} <a href="/staff/{{id}}">read more...</a></p>-->
+<!--        <p> <a href="/staff/{{id}}/update">Edit this post</a><br></p>-->
+<!--         &lt;!&ndash;show&ndash;&gt;-->
+<!--       {{/each}}-->
+<!--   {{else}} &lt;!&ndash;no posts!&ndash;&gt;-->
+<!--    <p>No staff!</p>-->
+<!--   {{/if}}-->
+
+<!--   {{#if departments}} &lt;!&ndash;if staffs exist, then &ndash;&gt;-->
+<!--   {{#each departments}} &lt;!&ndash;loop&ndash;&gt;-->
+<!--   <p>New Staff Details:</p>-->
+<!--   <p>Name :{{ name }},{{ id }}</p>-->
+<!--   <p>Department: {{ value }}</p>-->
+
+<!--   <p>{{ content }} <a href="/departments/{{id}}">read more...</a></p>-->
+<!--   <p> <a href="/departments/{{id}}/update">Edit this post</a><br></p>-->
+<!--   &lt;!&ndash;show&ndash;&gt;-->
+<!--   {{/each}}-->
+<!--   {{else}} &lt;!&ndash;no posts!&ndash;&gt;-->
+<!--   <p>No staff!</p>-->
+<!--   {{/if}}-->
+
+<div class="row" style="text-align:left;">
+   <div class="alert alert-info" role="alert">
+       <h1 style="text-align:center;">Safaricom Staff</h1>
+
+       {{#if staffs}} <!--if staffs exist, then -->
+       <ol>
+           {{#each staffs }} <!--loop-->
+
+               <li>Name :<a href="/staff/{{id}}">{{ content }},Department: {{ department }}</a><a href="/staff/{{id}}/update" > Edit Staff</a></li>
+
+               <!--show-->
+           {{/each}}
+       </ol>
+       {{else}} <!--no posts!-->
+           <div class="alert alert-warning" role="alert">
+               <a href="#" class="alert-link">No staff!</a>
+           </div>
+       {{/if}}
+
+
+   </div>
+</div>
+
+
+   </div>
+   </div>
+   </div>
+{{/partial}}
+
+{{> layout.hbs}}
