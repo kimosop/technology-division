@@ -30,7 +30,7 @@ https://github.com/kimosop/technology-division.git
 
 ## Live Link
 
-https://technology-division.herokuapp.com/
+https://safaricom-technology-division.herokuapp.com/
 
 
 ## Technologies Used
