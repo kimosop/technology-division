@@ -38,7 +38,7 @@ This Web App was created using:
 * JAVA
 * Spark
 * IntelliJ
-* Heroku CLI
+* Heroku Github link
 
 
 ### License
